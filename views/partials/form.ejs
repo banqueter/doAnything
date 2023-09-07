@@ -1,0 +1,12 @@
+<div class="formContainer">
+  <form action="/submit" method="POST">
+    <input type="hidden" name="endpoint" value="<%= endpoint %>" />
+    <textarea
+      name="newTodo"
+      rows="1"
+      placeholder="Input your new todo..."
+      autofocus
+    ></textarea>
+    <input class="btn" type="submit" value="+" />
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/header.ejs") %>
+    <title>TodoList1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="innerContainer">
+        <% for(item of data.itemsL1) {%>
+        <div class="todo">
+          <input
+            id="<%= item.id %>"
+            class="shadowed"
+            type="checkbox"
+            onclick="toggleStrikeThrough(this)"
+          />
+          <label for="<%= item.id %>"><%= item.text %></label>
+        </div>
+        <% } %>
+      </div>
+      <div class="gap"></div>
+      <%- include("partials/direction.ejs", { endpoint: "/list1" }) %> <%-
+      include("partials/form.ejs", { endpoint: "/list1" }) %>
+    </div>
+  </body>
+  <%- include("partials/footer.ejs") %>
+</html>

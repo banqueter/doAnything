@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="innerContainer">
+        <% for(item of data.itemsL2) {%>
+        <div class="todo">
+          <input
+            id="<%= item.id %>"
+            class="shadowed"
+            type="checkbox"
+            onclick="toggleStrikeThrough(this)"
+          />
+          <label for="<%= item.id %>"><%= item.text %></label>
+        </div>
+        <% } %>
+      </div>
+      <div class="gap"></div>
+      <%- include("partials/direction.ejs", { endpoint: "/list2" }) %> <%-
+      include("partials/form.ejs", { endpoint: "/list2" }) %>
+    </div>
+  </body>
+</html>
+
+<%- include("partials/footer.ejs") %>
